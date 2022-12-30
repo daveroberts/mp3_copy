@@ -1,7 +1,11 @@
-const DEST_DIR = `Z:\\Desktop\\iPodMusic`
+const DEST_DIR = `Z:\\Desktop\\iPodMusic\\Music`
 
 const fs = require("fs")
 const path = require("path")
+
+console.log(`Starting`)
+process.chdir(__dirname)
+
 let blacklist = fs.readFileSync('blacklist.txt').toString().split(/\r?\n/)
 
 function get_all_files(dirPath, opts = {}, arrayOfFiles = null) {
